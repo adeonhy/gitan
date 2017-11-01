@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Fabric} from 'office-ui-fabric-react/lib/Fabric'
+import NavBar from './components/NavBar.js'
+import SidebarMenu from './components/SidebarMenu.js'
+import Content from './components/Content.js'
+import Footer from './components/Footer.js'
+import './styles/App.css'
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Fabric className="App">
+        <div className="header">
+          <NavBar />
+        </div>
+        <div className="body">
+          <div className="content">
+            <Content />
+          </div>
+          <div className="sidebar">
+            <SidebarMenu />
+          </div>
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+      </Fabric>
     );
   }
 }
 
-export default App;
+export default App
